@@ -1,0 +1,154 @@
+---
+permalink: "empadronamiento/index.html"
+---
+
+{% extends "src/base.njk" %}
+
+{% block head %}
+<title>Nuestra Elección | Empadronamiento</title>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+{% endblock %}
+
+{% block content %}
+        <!-- Slider
+		============================================= -->
+		<section id="slider" class="slider-element" style="background-image: url('/elementos/slider_empadronamiento.png');background-size:cover;">
+			<div class="container">
+				<div class="row h-100 center align-self-center flex-column pt-5 pb-0 py-lg-6 mb-0 my-lg-4" style="padding:0 20%">
+                    <h1 style="font-family:Arvo-Bold, sans-serif!important;font-size:50px;font-weight:900" class="text-white th1-responsive" style="font-size:30px; font-weight:700">Empadrónate</h1>
+                    <img src="/elementos/EMPA-03.png">
+                    <a href="#" target="_blank" class="timer_animated"><h6 style="font-family:Arvo-Bold, sans-serif!important;font-size:20px;font-weight:900" class="text-white">Tiempo aproximado para el cierre de empadronamiento:</h6>
+                    <div id="timer" class="pt-40 d-flex"></div></a>
+				</div>
+			</div>
+		</section>
+
+        <!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+
+                <!-- contact-address-area-strat -->
+                <div class="container pt-130 pb-130">
+                    <div class="row">
+                        <div class="col-lg-8 col-xl-8 col-sm-12 col-md-12 mb-40 px-3">
+
+                            <div class="row mb-40">
+                                <div class="col-lg-6 col-sm-12">
+                                    <div class="flourish-embed" data-src="visualisation/11256447"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                                </div>
+                                <div class="col-lg-6 col-sm-12">
+                                    <div class="flourish-embed" data-src="visualisation/11256483"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                                </div>
+                            </div>
+                            
+                            <!--{% for item in collections.dashboard_empadronamiento | limit(1)%}                          
+                                <img src="{{item.data.imagen_grafica}}">
+                            {% endfor %}-->
+
+                            <div class="flourish-embed flourish-map" data-src="visualisation/11237376"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+                            <!--ANUNCIO-->
+                            <div class="max-w-screen-lg mx-auto mt-20 mb-40">
+                                <div class="grid grid-cols-4">
+                                    <div class="col-span-full mt-6">
+                                        <img src="/elementos/ne.gif" alt="funny GIF" width="100%">
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="flourish-embed flourish-table"
+                            data-src="visualisation/11184442"><script
+                            src="https://public.flourish.studio/resources/embed.js"></script></div>
+                        </div>
+                        <div class="col-lg-4 col-xl-4 col-sm-12 col-md-12 px-3">
+                            <div id="reportes_parcial" style="display:block">
+                            {% for reporte in collections.reportes_empadronamiento | reverse | limit(3)%}
+                                <a target="_blank" href="{{reporte.data.link}}" target="_blank"><div class="mb-20">
+                                    <img class="w-100" src="{{reporte.data.image}}">
+                                    <h1 style="font-family:Arvo-Bold, sans-serif!important;font-size:20px">{{reporte.data.title}}</h1>
+                                    <p style="font-family:Arvo-Regular, sans-serif!important;font-size:15px;color:rgb(70,73,96)!important">{{reporte.data.description}}</p>
+                                </div></a>
+                            {% endfor %}
+                            </div>
+
+                            <div id="reportes_full" style="display:none">
+                            {% for reporte in collections.reportes_empadronamiento | reverse%}
+                                <a target="_blank" href="{{reporte.data.link}}" target="_blank"><div class="mb-20"> 
+                                    <img class="w-100" src="{{reporte.data.image}}">
+                                    <h1 style="font-family:Arvo-Bold, sans-serif!important;font-size:20px">{{reporte.data.title}}</h1>
+                                    <p style="font-family:Arvo-Regular, sans-serif!important;font-size:15px;color:rgb(70,73,96)!important">{{reporte.data.description}}</p>
+                                </div></a>
+                            {% endfor %}
+                            </div>
+
+
+                            <a href="javascript:mostrar_reportes()" id="boton_reportes" class="btn">Ver más ▾</a>
+
+                            <img class="mb-40 mt-40 w-100" src="/elementos/BANNER LATERAL.gif">
+
+                            <!--<br><br><br>
+
+                            {% for reporte in collections.reportes_empadronamiento%}
+                                <a class="btn" href="{{reporte.data.link}}"><div>
+                                    <h1 class="text-white mb-20">{{reporte.data.title}}</h1>
+                                    <p style="font-size:10px!important">{{reporte.data.description}}</p>
+                                </div></a>
+                                
+                            {% endfor %}-->
+                        </div>
+                    </div>
+                </div>
+
+			</div>
+		</section><!-- #content end -->
+
+		
+{% endblock %}
+
+{% block body_javascripts %}
+
+    <script type="text/javascript"> 
+        var final = moment("2023-03-25 17:00:00");
+        setInterval(function() {
+            var inicio = moment();
+            var duracion = final.diff(inicio);
+            var intervalo = moment(duracion);
+            var mes = intervalo.month()+1;
+            var diaDelMes = intervalo.date();
+            var hora = intervalo.hour();
+            var minuto = intervalo.minute();
+            var segundo = intervalo.second();
+            var resultado = (intervalo.format("MM/DD HH:mm:ss"));
+//            $("#resultado").html(mes + " Meses " + diaDelMes + " Dias " + hora + " Horas " + minuto + " Minutos " + segundo + " Segundos");
+            $("#timer").html("<div><h1>" + mes + "</h1>" + " <h4>Meses</h4></div> " + "<div><h1>" + diaDelMes + "</h1>" + " <h4>Días</h4></div> " + "<div><h1>" + hora + "</h1>" + " <h4>Horas</h4></div> " + "<div><h1>" + minuto + "</h1>" + " <h4>Minutos</h4></div> ");
+//            $("#minuto").html(minuto);
+//           $("#segundo").html(segundo);
+        }, 1000);
+        
+    </script>
+
+    <script type="text/javascript">
+        function mostrar_reportes() {              
+            parcial = document.getElementById("reportes_parcial");
+            full = document.getElementById("reportes_full");
+            boton_reportes = document.getElementById("boton_reportes");
+
+            console.log(full.style.display)
+
+            if(full.style.display  == "none"){
+                full.style.display = "block";
+                parcial.style.display = "none"
+                boton_reportes.innerHTML = "Ver Menos ▴"
+            }
+            else{
+                full.style.display = "none";
+                parcial.style.display = "block"
+                boton_reportes.innerHTML = "Ver Más ▾"
+            }
+        }
+    </script>
+
+{% endblock %}
