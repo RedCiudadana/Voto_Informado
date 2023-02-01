@@ -19311,7 +19311,7 @@ label.checkbox {
 
 .texto-intro{
   font-size: 17px;
-  color: rgb(70, 73, 95) !important;
+  color: rgb(70, 73, 95);
   margin: 20px 7%!important;
 }
 
@@ -19549,4 +19549,11 @@ label.checkbox {
 
 .timer_animated:hover{
   transform: scale(1.1);
+}
+
+.start-box{
+  background-color: #46495F;
+  border-radius: 10px;
+  padding: 5%;
+  height: 100%;
 }
