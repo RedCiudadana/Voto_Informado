@@ -19,8 +19,72 @@ permalink: "index.html"
 				<!-- Novedades
 				============================================= -->
 
-				<div class="section py-6 my-6" style="background-color: #fff">
+				<div class="section my-6" style="background-color: #fff">
+					<div class="container">
+						<div class="row">
 
+							<div class="col-lg-3 col-sm-12 order-2 order-lg-1">
+								{% for novedad in collections.novhigh2 | limitPart(1,2) %}
+								<div class="novedad_secundaria_lateral mb-4">
+									<img src="{{novedad.data.image}}">
+									<a href="{{novedad.url}}"><h1>{{novedad.data.title}}</h1></a>
+									<p>{{novedad.data.description}}</p>
+									<i>Escrito por: &nbsp{{novedad.data.autor}}</i>
+								</div>
+								{% endfor%}
+								{% for novedad in collections.novhigh3 | limitPart(0,2) %}
+								<div class="novedad_terciaria_lateral mb-4">
+									<a href="{{novedad.url}}"><h1>{{novedad.data.title}}</h1></a>
+									<p>{{novedad.data.description}}</p>
+									<i>Escrito por: &nbsp{{novedad.data.autor}}</i>
+								</div>
+								{% endfor%}
+								
+							</div>
+							<div class="col-lg-6 col-sm-12 order-1 order-lg-2">
+								{% for novedad in collections.novhigh1 | limit(1)%}
+								<div class="novedad_principal mb-4">
+									<img src="{{novedad.data.image}}">
+									<h4>The Highlight</h4>
+									<a href="{{novedad.url}}"><h1>{{novedad.data.title}}</h1></a>
+									<p>{{novedad.data.description}}</p>
+									<i>Escrito por: &nbsp{{novedad.data.autor}}</i>
+								</div>
+								{% endfor%}
+								{% for novedad in collections.novhigh2 | limit(1)%}
+								<div class="row novedad_secundaria_centro mb-4">
+									<div class="col-lg-8 col-sm-12 order-2 order-lg-1 izquierda">
+										<a href="{{novedad.url}}"><h1>{{novedad.data.title}}</h1></a>
+										<p>{{novedad.data.description}}</p>
+										<i>Escrito por: &nbsp{{novedad.data.autor}}</i>
+									</div>
+									<div class="col-lg-4 col-sm-12 order-1 order-lg-2">
+										<img src="{{novedad.data.image}}">
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+							<div class="col-lg-3 col-sm-12 order-3 order-lg-3">
+								{% for novedad in collections.novhigh2 | limitPart(2,3) %}
+								<div class="novedad_secundaria_lateral mb-4">
+									<img src="{{novedad.data.image}}">
+									<a href="{{novedad.url}}"><h1>{{novedad.data.title}}</h1></a>
+									<p>{{novedad.data.description}}</p>
+									<i>Escrito por: &nbsp{{novedad.data.autor}}</i>
+								</div>
+								{% endfor%}
+								{% for novedad in collections.novhigh3 | limitPart(2,4) %}
+								<div class="novedad_terciaria_lateral mb-4">
+									<a href="{{novedad.url}}"><h1>{{novedad.data.title}}</h1></a>
+									<p>{{novedad.data.description}}</p>
+									<i>Escrito por: &nbsp{{novedad.data.autor}}</i>
+								</div>
+								{% endfor%}
+
+							</div>
+							
+						</div>
+					</div>
 				</div>
 		
 				<!-- Podcast
