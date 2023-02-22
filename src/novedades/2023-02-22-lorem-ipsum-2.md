@@ -1,5 +1,5 @@
 ---
-title: Lorem Ipsum 2
+title: Lorem Ipsum 2-1
 image: /images/posts/eip_web-37.png
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
   aliquet elit euismod leo lacinia scelerisque. Maecenas eu placerat neque.
