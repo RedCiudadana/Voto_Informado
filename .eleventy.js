@@ -42,4 +42,22 @@ module.exports = function (eleventyConfig) {
             return item.data.highlight == true;
         });
     });
+
+    eleventyConfig.addCollection('novhigh1', (collectionApi) => {
+        return collectionApi.getFilteredByTag('novedades').filter((item) => {
+            return item.data.highlight1 == true;
+        });
+    });
+
+    eleventyConfig.addCollection('novhigh2', (collectionApi) => {
+        return collectionApi.getFilteredByTag('novedades').filter((item) => {
+            return item.data.highlight2 == true;
+        });
+    });
+
+    eleventyConfig.addCollection('novhigh3', (collectionApi) => {
+        return collectionApi.getFilteredByTag('novedades').filter((item) => {
+            return item.data.highlight3 == true;
+        });
+    });
 }

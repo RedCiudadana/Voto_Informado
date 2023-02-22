@@ -1,5 +1,0 @@
-{
-    "tags": "dashboard_empadronamiento",
-    "permalink": "dashboard_empadronamiento/{{ page.fileSlug }}/index.html",
-    "layout": "layouts/dashboard_emp.njk"
-}

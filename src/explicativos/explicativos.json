@@ -1,5 +1,0 @@
-{
-    "tags": "explicativos",
-    "permalink": "explicativos/{{ page.fileSlug }}/index.html",
-    "layout": "layouts/explicativo.njk"
-}
