@@ -19,7 +19,7 @@ permalink: "index.html"
 				<!-- Novedades
 				============================================= -->
 
-				<div class="section my-6" style="background-color: #fff">
+				<div class="section mt-1 mb-4" style="background-color: #fff">
 					<div class="container">
 						<div class="row">
 
@@ -45,7 +45,7 @@ permalink: "index.html"
 								{% for novedad in collections.novhigh1 | limit(1)%}
 								<div class="novedad_principal mb-4">
 									<img src="{{novedad.data.image}}">
-									<h4>The Highlight</h4>
+									<h4>Destacado</h4>
 									<a href="{{novedad.url}}"><h1>{{novedad.data.title}}</h1></a>
 									<p>{{novedad.data.description}}</p>
 									<i>Escrito por: &nbsp{{novedad.data.autor}}</i>
@@ -74,7 +74,7 @@ permalink: "index.html"
 								</div>
 								{% endfor%}
 								{% for novedad in collections.novhigh3 | limitPart(2,4) %}
-								<div class="novedad_terciaria_lateral mb-4">
+								<div class="novedad_terciaria_lateral mt-4 mb-4">
 									<a href="{{novedad.url}}"><h1>{{novedad.data.title}}</h1></a>
 									<p>{{novedad.data.description}}</p>
 									<i>Escrito por: &nbsp{{novedad.data.autor}}</i>

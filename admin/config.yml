@@ -96,5 +96,143 @@ collections:
           default: false,
           hint: "Display podcast in home's highlights",
         }
-
+  - name: "explicativos" # Used in routes, e.g., /admin/collections/blog
+    label: "Explicativos" # Used in the UI
+    folder: "src/explicativos" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    editor:
+      preview: false # Disable the editor preview and use instead 'preview links'
+    fields: # The fields for each document, usually in front matter
+      - { name: "title", label: "Title" }
+      - {
+          label: "Icono de Explicativo",
+          name: "icono_explicativo",
+          widget: "image",
+        }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { label: "Slider", name: "slider", widget: "image" }
+      - {
+          label: "TituloSlider",
+          name: "tslider",
+          hint: "Título que se desplegará en el slider",
+          required: false,
+        }
+      - {
+          label: "TextoSlider",
+          name: "txtslider",
+          hint: "Subtítulo del slider",
+          required: false,
+        }
+      - {
+          name: "tseccionA1",
+          label: "Titulo SeccionA1",
+          hint: "Título que se desplegará en el texto 1 de la izquierda",
+          required: false,
+        }
+      - {
+          name: "seccionA1",
+          label: "SeccionA1",
+          widget: "markdown",
+          hint: "Texto que se desplegará en el texto 1 de la izquierda",
+          required: false,
+        }
+      - {
+          label: "Icono Seccion A1",
+          name: "iseccionA1",
+          widget: "image",
+          required: false,
+        }
+      - {
+          name: "tseccionA2",
+          label: "Titulo SeccionA2",
+          hint: "Título que se desplegará en el texto 2 de la izquierda",
+          required: false,
+        }
+      - {
+          name: "seccionA2",
+          label: "SeccionA2",
+          widget: "markdown",
+          hint: "Texto que se desplegará en el texto 2 de la izquierda",
+          required: false,
+        }
+      - {
+          label: "Icono Seccion A2",
+          name: "iseccionA2",
+          widget: "image",
+          required: false,
+        }
+      - {
+          name: "seccionB1",
+          label: "SeccionB1",
+          widget: "markdown",
+          hint: "Embeds o Audiovisuales",
+          required: false,
+        }
+      - {
+          name: "seccionB2",
+          label: "SeccionB2",
+          widget: "markdown",
+          hint: "Embeds o Audiovisuales",
+          required: false,
+        }
+      - {
+          name: "tseccionA3",
+          label: "Titulo SeccionA3",
+          hint: "Título que se desplegará en el texto 3 de la izquierda",
+          required: false,
+        }
+      - {
+          name: "seccionA3",
+          label: "SeccionA3",
+          widget: "markdown",
+          hint: "Texto que se desplegará en el texto 3 de la izquierda",
+          required: false,
+        }
+      - {
+          label: "Icono Seccion A3",
+          name: "iseccionA3",
+          widget: "image",
+          required: false,
+        }
+      - {
+          name: "tseccionA4",
+          label: "Titulo SeccionA4",
+          hint: "Título que se desplegará en el texto 4 de la izquierda",
+          required: false,
+        }
+      - {
+          name: "seccionA4",
+          label: "SeccionA4",
+          widget: "markdown",
+          hint: "Texto que se desplegará en el texto 4 de la izquierda",
+          required: false,
+        }
+      - {
+          label: "Icono Seccion A4",
+          name: "iseccionA4",
+          widget: "image",
+          required: false,
+        }
+      - {
+          name: "seccionB3",
+          label: "SeccionB3",
+          widget: "markdown",
+          hint: "Embeds o Audiovisuales",
+          required: false,
+        }
+      - {
+          name: "seccionB4",
+          label: "SeccionB4",
+          widget: "markdown",
+          hint: "Embeds o Audiovisuales",
+          required: false,
+        }
+      - {
+          label: "Slider Conclusion",
+          name: "sliderconclusion",
+          widget: "image",
+        }
+      - { name: "tconclusion", label: "Título Conclusion" }
+      - { name: "conclusion", label: "Conclusion" }
 show_preview_links: true
