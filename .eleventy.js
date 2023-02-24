@@ -60,4 +60,10 @@ module.exports = function (eleventyConfig) {
             return item.data.highlight3 == true;
         });
     });
+
+    eleventyConfig.addCollection('tiktoksHighlighted', (collectionApi) => {
+        return collectionApi.getFilteredByTag('tiktoks').filter((item) => {
+            return item.data.highlight == true;
+        });
+    });
 }
