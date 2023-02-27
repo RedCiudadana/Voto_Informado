@@ -211,19 +211,19 @@ li {
 }
 
 ::selection {
-  background: #1abc9c;
+  background: #E86762;
   color: #fff;
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: #1abc9c; /* Firefox */
+  background: #E86762; /* Firefox */
   color: #fff;
   text-shadow: none;
 }
 
 ::-webkit-selection {
-  background: #1abc9c; /* Safari */
+  background: #E86762; /* Safari */
   color: #fff;
   text-shadow: none;
 }
@@ -251,6 +251,7 @@ a {
 
 a:hover {
   color: #E86762!important;
+  text-decoration: none;
 }
 
 a img {
@@ -346,7 +347,7 @@ h3 > span:not(.nocolor):not(.badge),
 h4 > span:not(.nocolor):not(.badge),
 h5 > span:not(.nocolor):not(.badge),
 h6 > span:not(.nocolor):not(.badge) {
-  color: #1abc9c;
+  color: #E86762;
 }
 
 p,
@@ -4625,7 +4626,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 
 .menu-item:hover > .menu-link,
 .menu-item.current > .menu-link {
-  color: #F5AC4D!important;
+  color: #E86762!important;
   text-decoration: none!important;
 }
 
