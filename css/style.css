@@ -1209,7 +1209,7 @@ span.middot {
 
 .bg-color,
 .bg-color #header-wrap {
-  background-color: #E86762 !important;
+  background-color: #1f4f88 !important;
 }
 
 .color {
@@ -4101,12 +4101,12 @@ html[xmlns] .slider-wrap {
 
 #header {
   position: relative;
-  background-color: #E86762;
+  background-color: #1f4f88;
 }
 
 #header-wrap {
   position: relative;
-  background-color: #E86762;
+  background-color: #1f4f88;
   width: 100%;
 }
 
@@ -4265,7 +4265,7 @@ html[xmlns] .slider-wrap {
   }
 
   .sticky-header.full-header #header-wrap {
-    border-bottom: 1px solid #E86762;
+    border-bottom: 1px solid #1f4f88;
   }
 
   .sticky-header.semi-transparent {
@@ -19553,11 +19553,59 @@ label.checkbox {
   transform: scale(1.1);
 }
 
-.start-box{
-  background-color: #46495F;
+.start-box-active{
+  background-color: #E86762;
   border-radius: 10px;
   padding: 5%;
   height: 100%;
+  text-align: center;
+}
+
+.start-box-active h1, h6{
+  color: #fff!important;
+}
+
+.start-box-active h1{
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.start-box-active h6{
+  margin-bottom: 15px;
+}
+
+.start-box-active p{
+  margin-bottom: 25px;
+}
+
+.start-box{
+  background-color: #1f4f88;
+  border-radius: 10px;
+  padding: 5%;
+  height: 100%;
+  text-align: center;
+}
+
+.start-box h1, h6{
+  color: #fff!important;
+}
+
+.start-box h1{
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.start-box h6{
+  margin-bottom: 15px;
+}
+
+.start-box p{
+  margin-bottom: 25px;
+}
+
+.img-start-box{
+  margin: 20px auto;
+  width: 50%;
 }
 
 .novedad_principal{
